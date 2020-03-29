@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Quiz</title>
+<style>
+body {
+background-color: rgb(39, 169, 212);
+
+}
+
+#b {
+width: 80%;
+margin: auto;
+padding: 10px;
+background-color: white;
+border-radius: 10px;
+}
+
+#b1 {
+margin-top: 0;
+text-align: center;
+padding: 5px;
+background: rgb(238, 238, 62);
+color: rgb(148, 55, 55);
+}
+
+label {
+display: block;
+}
+
+input {
+width: 30px;
+margin-left: 20px;
+}
+
+
+button {
+width: 100px;
+margin-top: 20px;
+}
+
+</style>
+
+
+</head>
+<body>
+<div id="b">
+<div id="b1">
+<h1>QUIZz To WIZz</h1>
+</div>
+<form id="form1">
+
+<h2>A for :</h2>
+<label for="var_string"><input type="radio" name="variable" value="0" id="var_string" />Orange</label>
+<label for="var_join"><input type="radio" name="variable" value="0" id="var_join" />Mango</label>
+<label for="var_info"><input type="radio" name="variable" value="25" id="var_info" />Apple</label>
+<label for="var_condition"><input type="radio" name="variable" value="0" id="var_condition"/>Fruit</label>
+
+<h2>B for :</h2>
+<label for="sub_string"><input type="radio" name="sub" value="25" id="sub_string"/>Ball</label>
+<label for="sub_join"><input type="radio" name="sub" value="0" id="sub_join"/>Wicket</label>
+<label for="sub_info"><input type="radio" name="sub" value="0" id="sub_info" />Stumps</label>
+<label for="sub_condition"><input type="radio" name="sub" value="0" id="sub_condition" />Cricket</label>
+
+<h2>C for :</h2>
+<label for="cat_string"><input type="radio" name="con" value="0" id="cat_string" />Dog</label>
+<label for="cat_join"><input type="radio" name="con" value="25" id="cat_join" />Cat</label>
+<label for="cat_info"><input type="radio" name="con" value="0" id="cat_info" />You</label>
+<label for="cat_condition"><input type="radio" name="con" value="0" id="cat_condition" />Me</label>
+
+<h2>D for :</h2>
+<label for="if_string"><input type="radio" name="ifstate" value="0" id="if_string" />Sing</label>
+<label for="if_join"><input type="radio" name="ifstate" value="0" id="if_join" />Clap</label>
+<label for="if_info"><input type="radio" name="ifstate" value="0" id="if_info" />See</label>
+<label for="if_condition"><input type="radio" name="ifstate"  value="25" id="if_condition" />Dance</label>
+
+<button type="submit" value="Submit">Submit</button>
+
+</form>
+    
+<p>Your grade is: <span id="grade">__</span></p>
+<p id="grade2"></p>
+
+
+
+<script>
+document.getElementById("form1").onsubmit=function() {
+       variable = parseInt(document.querySelector('input[name = "variable"]:checked').value);
+	   sub = parseInt(document.querySelector('input[name = "sub"]:checked').value);
+	   con = parseInt(document.querySelector('input[name = "con"]:checked').value);
+	   ifstate = parseInt(document.querySelector('input[name = "ifstate"]:checked').value);
+	   
+	   
+	   result = variable + sub + con + ifstate;
+	   
+	document.getElementById("grade").innerHTML = result;
+
+ grading = [
+	   {score:0},
+	   {score:25},
+	   {score:50},
+	   {score:75},
+	   {score:100}
+	   ];
+	  
+for(i=0; i<grading.length; i++) {
+    if(result == grading[i].score) {
+    result2 = grading[i].feedback + grading[i];
+	  }
+	  }
+
+
+document.getElementById("grade2").innerHTML = result2; 
+
+return false;
+} 
+
+</script>
+
+
+</div>
+</body>
+</html>
+
